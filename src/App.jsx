@@ -15,8 +15,9 @@
  */
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import About from "./About.jsx";
-import Home from "./Home.jsx";
+import About from "./Routes/About.jsx";
+import Home from "./Routes/Home.jsx";
+import VanLists from "./Routes/VanLists.jsx";
 
 function App() {
   return (
@@ -27,11 +28,13 @@ function App() {
         </Link>
         <nav>
           <Link to="/about">About</Link>
+          <Link to="/vans">Vans</Link>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/vans" element={<VanLists />} />
       </Routes>
     </BrowserRouter>
   );
