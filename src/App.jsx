@@ -14,8 +14,27 @@
  * linked in the slides.
  */
 
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import About from "./About.jsx";
+import Home from "./Home.jsx";
+
 function App() {
-  return <h1>Start here</h1>;
+  return (
+    <BrowserRouter>
+      <header>
+        <Link className="site-logo" to="/">
+          #VANLIFE
+        </Link>
+        <nav>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
